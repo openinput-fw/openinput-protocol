@@ -127,6 +127,18 @@ The remaining of the data might be used by the error to pass arguments.
     +-------------+------+----------------------------+----------+---------------+-------------+-----------------+
 
 
+Mandatory Functions
+~~~~~~~~~~~~~~~~~~~
+
+The following functions are mandatory, all devices that comply with this
+specification should support them.
+
+- Info (``0x00``), Version (``0x00``)
+- Info (``0x00``), Firmware Information (``0x01``)
+- Info (``0x00``), Supported Function Pages (``0x02``)
+- Info (``0x00``), Supported Functions (``0x03``)
+
+
 Function pages
 ~~~~~~~~~~~~~~
 

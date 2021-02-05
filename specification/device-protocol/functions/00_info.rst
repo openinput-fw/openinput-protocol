@@ -146,7 +146,7 @@ The first time you call this, you will probably want to set ``start_index`` to 0
 and then re-call the function with an incremented index if there are still
 elements left in the list.
 
-.. table:: Table 5 - Supported functions request argument structure
+.. table:: Table 6 - Supported functions request argument structure
 
     +-------------+-------------------+-----------------+----------+
     |     byte    |         0         |         1       | 2 .. End |
@@ -164,7 +164,7 @@ The list is a byte array, where each byte represents one function. The ``0x00``
 ID represents the end of the list (the ``0x00`` function is mandatory, so
 we use its ID to terminate the list here).
 
-.. table:: Table 6 - Supported functions return argument structure
+.. table:: Table 7 - Supported functions return argument structure
 
     +-------------+------------------------+------------------+
     |     byte    |            0           |     1 .. End     |
