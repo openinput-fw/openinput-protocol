@@ -147,3 +147,10 @@ Function pages
 - ``0xFD`` Gimmicks
 - ``0xFE`` Debug
 - ``0xFF`` *Error* (special, see `Errors` section)
+
+
+Notes
+~~~~~
+
+All values and field values specified here and in the function definitions are
+assumed to be unsigned unless specified oitherwise.
