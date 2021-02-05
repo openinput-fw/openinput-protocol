@@ -90,6 +90,42 @@ Data
     +-------------+------+---------------+-------------+---------+
 
 
+Sending reports
+~~~~~~~~~~~~~~~
+
+Request
+-------
+
+You may use one of the supported report IDs to communicate with the device.
+Function parameters are passes in the data section and their format is defined
+by the function specification. Unused data sections should be set to 0. Unused
+data sections from reports coming from the device should be ignored.
+
+Reply
+-----
+
+The device will reply with one of the report types, it doesn't need to be the
+same used in the request.
+The function page and ID will be set to the same value as the request, unless
+there was an error.
+
+Errors
+......
+
+If there was an error processing the request, the function page will be set to
+the `Error` function page ID (``0xFF``) and the function ID to the error ID, as
+defined by the `Error` function page. The first two bytes of the data segment
+will hold the function page and ID of the quest that triggered the error.
+The remaining of the data might be used by the error to pass arguments.
+
+.. table:: Table 6 - Short error reply packet structure
+
+    +-------------+------+----------------------------+----------+---------------+-------------+-----------------+
+    |     byte    |   0  |              1             |     2    |       3       |      4      |      5 .. 7     |
+    +=============+======+============================+==========+===============+=============+=================+
+    | description | 0x20 | 0xFF (Error Function Page) | Error ID | Function Page | Function ID | Error Arguments |
+    +-------------+------+----------------------------+----------+---------------+-------------+-----------------+
+
 
 Function pages
 ~~~~~~~~~~~~~~
@@ -98,4 +134,4 @@ Function pages
 - ``0x01`` General Profiles
 - ``0xFD`` Gimmicks
 - ``0xFE`` Debug
-- ``0xFF`` *Error*
+- ``0xFF`` *Error* (special, see `Errors` section)
