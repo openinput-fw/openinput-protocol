@@ -24,6 +24,12 @@ caused the error.
     +-------------+--------------+----------+
 
 
+``0x02`` Unsupported function
+-----------------------------
+
+This error indicates that the function requested is not supported.
+
+
 ``0xFE`` Custom error
 ---------------------
 
