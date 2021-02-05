@@ -96,5 +96,6 @@ Function pages
 
 - ``0x00`` Info (Protocol)
 - ``0x01`` General Profiles
-- ``0xFE`` Gimmicks
-- ``0xFF`` Debug
+- ``0xFD`` Gimmicks
+- ``0xFE`` Debug
+- ``0xFF`` *Error*
