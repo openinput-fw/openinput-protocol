@@ -77,3 +77,97 @@ characters terminated by either the null character or the end of the packet.
     +=============+====================+
     | description | (string) ``value`` |
     +-------------+--------------------+
+
+
+``0x02`` Supported Function Pages
+----------------------------------
+
+This function returns the list of supported function pages by the device.
+
+
+Request
+.......
+
+Because a single report might not be enough to get the full list, the list may
+have to by fetched by parts. For this reason the function supports getting the
+list starting at a certain index, which is indicated by the ``start_index``
+argument.
+
+The first time you call this, you will probably want to set ``start_index`` to 0
+and then re-call the function with an incremented index if there are still
+elements left in the list.
+
+.. table:: Table 5 - Supported function pages request argument structure
+
+    +-------------+-----------------+----------+
+    |     byte    |         0       | 1 .. End |
+    +=============+=================+==========+
+    | description | ``start_index`` |          |
+    +-------------+-----------------+----------+
+
+
+Reply
+.....
+
+The reply contains the number of elements left in the list and the list
+elements.
+The list is a byte array, where each byte represents one function page. The
+``0x00`` ID represents the end of the list (the ``0x00`` page is mandatory, so
+we use its ID to terminate the list here).
+
+.. table:: Table 6 - Supported functions return argument structure
+
+    +-------------+------------------------+------------------+
+    |     byte    |            0           |     1 .. End     |
+    +=============+========================+==================+
+    | description | ``remaining_elements`` | ``element_list`` |
+    +-------------+------------------------+------------------+
+
+
+``0x03`` Supported Functions
+----------------------------
+
+This function returns the list of supported functions by the device.
+
+This function is very similar to the ``0x02`` *Supported Function Pages*
+function, the only difference being the addition of a ``function_page``
+argument to the request.
+
+
+Request
+.......
+
+Because a single report might not be enough to get the full list, the list may
+have to by fetched by parts. For this reason the function supports getting the
+list starting at a certain index, which is indicated by the ``start_index``
+argument.
+
+The first time you call this, you will probably want to set ``start_index`` to 0
+and then re-call the function with an incremented index if there are still
+elements left in the list.
+
+.. table:: Table 5 - Supported functions request argument structure
+
+    +-------------+-------------------+-----------------+----------+
+    |     byte    |         0         |         1       | 2 .. End |
+    +=============+===================+=================+==========+
+    | description | ``function_page`` | ``start_index`` |          |
+    +-------------+-------------------+-----------------+----------+
+
+
+Reply
+.....
+
+The reply contains the number of elements left in the list and the list
+elements.
+The list is a byte array, where each byte represents one function. The ``0x00``
+ID represents the end of the list (the ``0x00`` function is mandatory, so
+we use its ID to terminate the list here).
+
+.. table:: Table 6 - Supported functions return argument structure
+
+    +-------------+------------------------+------------------+
+    |     byte    |            0           |     1 .. End     |
+    +=============+========================+==================+
+    | description | ``remaining_elements`` | ``element_list`` |
+    +-------------+------------------------+------------------+
