@@ -110,19 +110,16 @@ elements left in the list.
 Reply
 .....
 
-The reply contains the number of elements left in the list and the list
-elements.
-The list is a byte array, where each byte represents one function page. The
-``0x00`` ID represents the end of the list (the ``0x00`` page is mandatory, so
-we use its ID to terminate the list here).
+The reply contains the number of elements returned, the number of elements left
+and the list elements.
 
 .. table:: Table 6 - Supported functions return argument structure
 
-    +-------------+------------------------+------------------+
-    |     byte    |            0           |     1 .. End     |
-    +=============+========================+==================+
-    | description | ``remaining_elements`` | ``element_list`` |
-    +-------------+------------------------+------------------+
+    +-------------+-----------+------------------------+------------------+
+    |     byte    |     0     |            1           |     2 .. End     |
+    +=============+===========+========================+==================+
+    | description | ``count`` | ``remaining_elements`` | ``element_list`` |
+    +-------------+-----------+------------------------+------------------+
 
 
 ``0x03`` Supported Functions
@@ -159,16 +156,13 @@ elements left in the list.
 Reply
 .....
 
-The reply contains the number of elements left in the list and the list
-elements.
-The list is a byte array, where each byte represents one function. The ``0x00``
-ID represents the end of the list (the ``0x00`` function is mandatory, so
-we use its ID to terminate the list here).
+The reply contains the number of elements returned, the number of elements left
+and the list elements.
 
 .. table:: Table 7 - Supported functions return argument structure
 
-    +-------------+------------------------+------------------+
-    |     byte    |            0           |     1 .. End     |
-    +=============+========================+==================+
-    | description | ``remaining_elements`` | ``element_list`` |
-    +-------------+------------------------+------------------+
+    +-------------+-----------+------------------------+------------------+
+    |     byte    |     0     |            1           |     2 .. End     |
+    +=============+===========+========================+==================+
+    | description | ``count`` | ``remaining_elements`` | ``element_list`` |
+    +-------------+-----------+------------------------+------------------+
