@@ -52,6 +52,7 @@ Request
     ======== ================
     ``0x00`` Firmware vendor
     ``0x01`` Firmware version
+    ``0x02`` Device name
     ======== ================
 
 
