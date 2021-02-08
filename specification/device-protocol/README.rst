@@ -142,12 +142,17 @@ specification should support them.
 Function pages
 ~~~~~~~~~~~~~~
 
-- ``0x00`` Info (Protocol)
-- ``0x01`` General Profiles
-- ``0xFD`` Gimmicks
-- ``0xFE`` Debug
-- ``0xFF`` *Error* (special, see `Errors` section)
+- ``0x00`` `Info`_ (Protocol)
+- ``0x01`` `General Profiles`_
+- ``0xFD`` `Gimmicks`_
+- ``0xFE`` `Debug`_
+- ``0xFF`` `Error`_ * (special, see `Errors` section)
 
+.. _Info: functions/00_info.rst
+.. _General Profiles: .
+.. _Gimmicks: .
+.. _Debug: .
+.. _Error: functions/ff_error.rst
 
 Notes
 ~~~~~
