@@ -8,4 +8,4 @@ Specification for the `OpenInput protocol`_.
 
 Authors
     - Filipe Laíns (@FFY00) <lains@riseup.net>
-    - Rafael Silva (@perigoso) <silvagracarafael@gmail.com>
+    - Rafael Silva (@perigoso) <perigoso@riseup.net>
