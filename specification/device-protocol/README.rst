@@ -26,6 +26,18 @@ allow them to be expanded in the future if needed.
     such, they can't be safely represented as one parameter.
 
 
+Transport
+~~~~~~~~~
+
+The openinput protocol is built on top of the USB HID standard. It is designed
+it in mind as a transport, but other transports may be supported in the future
+via specification extensions.
+
+Devices impementing this specification must be able to receive data from either
+a ``INTERRUPT OUT`` endpoint or the ``SET_REPORT`` request, and must send data
+via the ``INTERRUPT IN`` endpoint.
+
+
 Report types
 ~~~~~~~~~~~~
 
