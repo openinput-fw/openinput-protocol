@@ -1,10 +1,10 @@
 ==================
-OpenInput Protocol
+openinput Protocol
 ==================
 
-Specification for the `OpenInput protocol`_.
+Specification for the `openinput protocol`_.
 
-.. _OpenInput protocol: specification
+.. _openinput protocol: specification
 
 Authors
     - Filipe Laíns (@FFY00) <lains@riseup.net>
