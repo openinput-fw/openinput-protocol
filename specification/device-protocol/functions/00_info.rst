@@ -5,6 +5,9 @@
 This function page defines functions to get information from the device.
 
 
+.. toctree::
+
+
 Functions
 ~~~~~~~~~
 

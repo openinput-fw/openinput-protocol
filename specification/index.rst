@@ -7,8 +7,19 @@ input devices, including, but not limited to, lighting, keybindings/macros,
 sensor resolutions (DPI/CPI)... It was designed on top of the USB HID protocol,
 which itself can be transported over USB, Bluetooth, I2C, SMBus, etc.
 
-- openinput Multiplexer
-- `openinput Device Protocol`_
+- `Device Protocol <device-protocol>`_
+- Multiplexer Protocol
 
 
-.. _openinput Device Protocol: device-protocol
+.. toctree::
+   :hidden:
+
+   Device Protocol <device-protocol/index>
+
+
+.. toctree::
+   :hidden:
+   :caption: External Links
+
+   Reference Implementation <https://github.com/openinput-fw/openinput/>
+   Issue Tracker <https://github.com/openinput-fw/openinput-protocol/issues>
