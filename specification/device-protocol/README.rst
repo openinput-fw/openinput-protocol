@@ -1,8 +1,8 @@
 =========================
-OpenInput Device Protocol
+openinput Device Protocol
 =========================
 
-The OpenInput protocol defines several functions to interact with the device.
+The openinput protocol defines several functions to interact with the device.
 Functions are organized in function pages to make it easier capability
 discovery. It also defines several report types, with varying lenghts and
 structure, to communicate with the device.
