@@ -25,6 +25,11 @@ allow them to be expanded in the future if needed.
     numeric representation. These fields don't have a specific size, and as
     such, they can't be safely represented as one parameter.
 
+.. toctree::
+   :hidden:
+
+   functions/index
+
 
 Transport
 ~~~~~~~~~
@@ -178,11 +183,11 @@ Function pages
 - ``0xFE`` `Debug`_
 - ``0xFF`` `Error`_ * (special, see `Errors` section)
 
-.. _Info: functions/00_info.rst
+.. _Info: functions/00_info.html
 .. _General Profiles: .
 .. _Gimmicks: .
 .. _Debug: .
-.. _Error: functions/ff_error.rst
+.. _Error: functions/ff_error.html
 
 Notes
 ~~~~~
