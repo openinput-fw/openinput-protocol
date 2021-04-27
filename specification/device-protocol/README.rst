@@ -29,12 +29,30 @@ allow them to be expanded in the future if needed.
 Report types
 ~~~~~~~~~~~~
 
+Data
+----
 
-Normal (Short and Long)
------------------------
+Devices may send data reports using the following report IDs. Some IDs are
+reserved for specific applications, and some are reserved for device-specific
+reports, all other are reserved for protocol or future usage and **must not** be
+used.
+
+.. table:: Table 1 - Supported data report types
+
+    =============== ====================
+       Report Type    ID(s)
+    =============== ====================
+    Mouse           ``0x01``
+    Keyboard        ``0x02``
+    Device-specific ``0x05`` to ``0x09``
+    =============== ====================
 
 
-.. table:: Table 1 - Report structure
+Protocol
+--------
+
+
+.. table:: Table 2 - Report structure
 
     +-------------+-----------+---------------+-------------+-----------+
     |     byte    |     0     |       1       |      2      | 3 .. End  |
@@ -49,7 +67,7 @@ Report ID
 
     There following report types are supported:
 
-    .. table:: Table 2 - Supported report types
+    .. table:: Table 3 - Supported protocol report types
 
         =========== ======== ========
         Report Type   Value   Lenght
