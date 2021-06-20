@@ -20,7 +20,7 @@ caused the error.
 .. table:: Table 1 - Inavalid value error argument structure
 
     +-------------+--------------+----------+
-    |     byte    |       2      | 3 .. End |
+    |     byte    |       0      | 1 .. End |
     +=============+==============+==========+
     | description | ``position`` |          |
     +-------------+--------------+----------+
@@ -44,7 +44,7 @@ character or the end of the packet.
 .. table:: Table 2 - Custom error argument structure
 
     +-------------+-----------------+
-    |     byte    |     2 .. End    |
+    |     byte    |     0 .. End    |
     +=============+=================+
     | description | ``description`` |
     +-------------+-----------------+
