@@ -29,7 +29,7 @@ Reply
 
 Protocol major, minor and patch versions.
 
-.. table:: Table 1 - Version return argument structure
+.. table:: Table 1 - Version return argument structure (data section)
 
     +-------------+-----------+-----------+-----------+----------+
     |     byte    |     0     |     1     |     2     | 3 .. End |
@@ -59,7 +59,7 @@ Request
     ======== ================
 
 
-.. table:: Table 3 - Firmware information request argument structure
+.. table:: Table 3 - Firmware information request argument structure (data section)
 
     +-------------+-----------+----------+
     |     byte    |     0     | 2 .. End |
@@ -74,7 +74,7 @@ Reply
 A description of the requested field. The description is comprised of ascii
 characters terminated by either the null character or the end of the packet.
 
-.. table:: Table 4 - Firmware information argument structure
+.. table:: Table 4 - Firmware information argument structure (data section)
 
     +-------------+--------------------+
     |     byte    |      0 .. End      |
@@ -101,7 +101,7 @@ The first time you call this, you will probably want to set ``start_index`` to 0
 and then re-call the function with an incremented index if there are still
 elements left in the list.
 
-.. table:: Table 5 - Supported function pages request argument structure
+.. table:: Table 5 - Supported function pages request argument structure (data section)
 
     +-------------+-----------------+----------+
     |     byte    |         0       | 1 .. End |
@@ -116,7 +116,7 @@ Reply
 The reply contains the number of elements returned, the number of elements left
 and the list elements.
 
-.. table:: Table 6 - Supported functions return argument structure
+.. table:: Table 6 - Supported functions return argument structure (data section)
 
     +-------------+-----------+------------------------+------------------+
     |     byte    |     0     |            1           |     2 .. End     |
@@ -147,7 +147,7 @@ The first time you call this, you will probably want to set ``start_index`` to 0
 and then re-call the function with an incremented index if there are still
 elements left in the list.
 
-.. table:: Table 6 - Supported functions request argument structure
+.. table:: Table 6 - Supported functions request argument structure (data section)
 
     +-------------+-------------------+-----------------+----------+
     |     byte    |         0         |         1       | 2 .. End |
@@ -162,7 +162,7 @@ Reply
 The reply contains the number of elements returned, the number of elements left
 and the list elements.
 
-.. table:: Table 7 - Supported functions return argument structure
+.. table:: Table 7 - Supported functions return argument structure (data section)
 
     +-------------+-----------+------------------------+------------------+
     |     byte    |     0     |            1           |     2 .. End     |
