@@ -62,7 +62,7 @@ Request
 .. table:: Table 3 - Firmware information request argument structure (data section)
 
     +-------------+-----------+----------+
-    |     byte    |     0     | 2 .. End |
+    |     byte    |     0     | 1 .. End |
     +=============+===========+==========+
     | description |   ``id``  |          |
     +-------------+-----------+----------+
