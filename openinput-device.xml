@@ -1,0 +1,122 @@
+<!--
+  SPDX-License-Identifier: GPL-3.0-only
+  SPDX-FileCopyrightText: 2021 Filipe Laíns <lains@riseup.net>
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol name="openinput-device">
+
+  <page name="info" id="0x00">
+
+    <function name="version" id="0x00">
+      <description>
+        Get the version of the implemented protocol.
+      </description>
+      <response>
+        <data type="u8" name="major"/>
+        <data type="u8" name="minor"/>
+        <data type="u8" name="patch"/>
+      </response>
+    </function>
+
+    <function name="firmware_information" id="0x01">
+      <description>
+        Get information about the firmware build.
+      </description>
+      <request>
+        <enum type="u8">
+          <entry name="firmware_vendor"/>
+          <entry name="firmware_version"/>
+          <entry name="device_name"/>
+        </enum>
+      </request>
+      <response>
+        <data type="ascii" name="value"/>
+      </response>
+    </function>
+
+    <function name="supported_function_pages" id="0x02">
+      <description>
+        Get the list of the supported function pages by the device.
+
+        The full list may be not fit in the space we have available for one
+        request, so you may need fetch it by parts.
+
+        .. code-block:: python
+           :caption: Example algorithm
+
+           function_pages = []
+           start_index = 0
+           remaining_count = None
+           while remaining_count != 0:
+               read_count, remaining_count, elements = supported_function_pages(start_index)
+               function_pages += elements[:read_count]
+               start_index += read_count
+      </description>
+      <request>
+        <data type="u8" name="start_index"/>
+      </request>
+      <response>
+        <description>
+          The reply contains the count of read elements (lenght of the
+          ``elements`` list), the count of remaining elements, and the list elements.
+        </description>
+        <data type="u8" name="read_count"/>
+        <data type="u8" name="remaining_count"/>
+        <list type="u8" name="elements"/>
+      </response>
+    </function>
+
+    <function name="supported_functions" id="0x03">
+      <description>
+        Get the list of the supported functions by the device for a certain
+        function page.
+
+        Similarly to ``supported_function_pages``, the full list may be not fit
+        in the space we have available for one request, so you may need fetch it
+        by parts.
+
+        Refeer to ``supported_function_pages`` for more detailed usage
+        information.
+      </description>
+      <request>
+        <data type="u8" name="page_id"/>
+        <data type="u8" name="start_index"/>
+      </request>
+      <response>
+        <data type="u8" name="read_count"/>
+        <data type="u8" name="remaining_count"/>
+        <list type="u8" name="elements"/>
+      </response>
+    </function>
+
+  </page>
+
+  <page name="error" id="0xff">
+
+    <error name="invalid_value" id="0x01">
+      <description>
+        Indicates that the value of an argument is invalid.
+      </description>
+      <body>
+        <data type="u8" name="position" summary="position of the first byte of the argument that caused the error"/>
+      </body>
+    </error>
+
+    <error name="unsupported_function" id="0x02">
+      <description>
+        Indicates that the requested function is not supported.
+      </description>
+    </error>
+
+    <error name="custom_error" id="0xfe">
+      <description>
+        Indicates that the value of an argument is invalid.
+      </description>
+      <body>
+        <data type="ascii" name="description" summary="description of the error"/>
+      </body>
+    </error>
+
+  </page>
+
+</protocol>
